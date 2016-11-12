@@ -64,6 +64,8 @@ class ProductTableView : UIView, UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        tableView.deselectRow(at: indexPath, animated: true) //attention to detail in UI
+        
         guard delegate != nil else {
             return
         }

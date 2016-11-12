@@ -53,6 +53,11 @@ extension HomeController : ProductTableViewDelegate
         let productView = ProductTableView.loadView()
         productView.delegate = self
         self.view.addSubview(productView)
+        
+        var frame = productView.frame
+        frame = self.view.frame
+        productView.frame = frame
+        
         productView.populate { (value) in    //populate call
             
             if value == false
