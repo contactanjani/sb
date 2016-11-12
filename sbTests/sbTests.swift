@@ -24,6 +24,8 @@ class sbTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+      
+        testAPI()
     }
     
     func testPerformanceExample() {
@@ -33,4 +35,12 @@ class sbTests: XCTestCase {
         }
     }
     
+    func testAPI()
+    {
+        let url = URL(string : kHomeUrl)
+        let request = URLRequest(url: url!)
+        APIManager.sharedInstance.initiateCall(request: request) { (data) in
+            XCTAssert(data != nil)
+        }
+    }
 }
